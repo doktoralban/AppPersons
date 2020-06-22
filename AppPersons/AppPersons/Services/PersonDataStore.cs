@@ -6,11 +6,11 @@ using AppPersons.Models;
 
 namespace AppPersons.Services
 {
-    public class PersonDataStore : IDataStorePerson<Person>
+    public class PrsDataStrore : IDataStorePerson<Person>
     {
         readonly List<Person> Lstpersons;
 
-        public PersonDataStore()
+        public PrsDataStrore()
         {
             Lstpersons = new List<Person>()
             {

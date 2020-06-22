@@ -13,13 +13,13 @@ namespace AppPersons.Views
     [DesignTimeVisible(false)]
     public partial class NewPersonPage : ContentPage
     {
-        public Person Item { get; set; }
+        public Person Kisi { get; set; }
 
         public NewPersonPage()
         {
             InitializeComponent();
 
-            Item = new Person
+            Kisi = new Person
             {
                 TcNo = "",
                 AdSoyad= ""
@@ -30,7 +30,7 @@ namespace AppPersons.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddPerson", Item);
+            MessagingCenter.Send(this, "AddPerson", Kisi);
             await Navigation.PopModalAsync();
         }
 

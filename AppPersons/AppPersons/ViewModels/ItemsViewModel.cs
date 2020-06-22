@@ -1,12 +1,10 @@
-﻿using System;
+﻿using AppPersons.Models;
+using AppPersons.Views;
+using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
-
-using AppPersons.Models;
-using AppPersons.Views;
 
 namespace AppPersons.ViewModels
 {

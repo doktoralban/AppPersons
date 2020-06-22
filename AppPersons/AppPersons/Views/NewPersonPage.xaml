@@ -14,10 +14,10 @@
 
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
-            <Label Text="Text" FontSize="Medium" />
-            <Entry Text="{Binding Person.TcNo}" d:Text="" FontSize="Small" />
-            <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Person.AdSoyad}" d:Text="" FontSize="Small" Margin="0" />
+            <Label Text="Tc No" FontSize="Medium" />
+            <Entry Text="{Binding Kisi.TcNo}" d:Text="" FontSize="Small" />
+            <Label Text="Ad Soyad" FontSize="Medium" />
+            <Editor Text="{Binding Kisi.AdSoyad}" d:Text="" FontSize="Small" Margin="0" />
         </StackLayout>
     </ContentPage.Content>
 

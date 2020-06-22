@@ -1,17 +1,16 @@
-﻿using System;
+﻿using AppPersons.Models;
+using AppPersons.Services;
+using AppPersons.Views;
+using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
-
-using AppPersons.Models;
-using AppPersons.Views;
-
+using Xamarin.Forms.Internals;
 
 namespace AppPersons.ViewModels
 {
-   public  class PersonsViewModel:BaseViewModel
+    public  class PersonsViewModel:BaseViewModel
     {
         public ObservableCollection<Person> Persons { get; set; }
         public Command LoadPersonsCommand { get; set; }
@@ -26,7 +25,10 @@ namespace AppPersons.ViewModels
             {
                 var newPerson = prs as Person;
                 Persons.Add(newPerson);
-                await DataStorePerson.AddPersonAsync(newPerson);
+                PrsDataStrore pd = new PrsDataStrore();
+               await pd.AddPersonAsync(newPerson);
+
+                //await DataStorePerson.AddPersonAsync(newPerson);
             });
         }
 
@@ -38,16 +40,20 @@ namespace AppPersons.ViewModels
             {
                 Persons.Clear();
 
+                //Persons.Add(new Person { TcNo = "11111111111", AdSoyad = "Ali bey" });
+                //Persons.Add(new Person { TcNo = "22222222222", AdSoyad = "Ayşe hanım" });
 
-                Persons.Add(new Person { TcNo = "11111111111", AdSoyad = "Ali bey" });
-                Persons.Add(new Person { TcNo = "22222222222", AdSoyad = "Ayşe hanım" });
+                var sx = await new PrsDataStrore().GetPersonsAsync(true);
+                foreach (var p in sx)
+                {
+                    Persons.Add(p);
+                }
 
+                //var prsS = await DataStorePerson.GetPersonsAsync(true);
 
-                //var personS = await DataStorePerson.GetPersonsAsync(true);
-
-                //foreach (var prs in Persons)
+                //foreach (var item in items)
                 //{
-                //    Persons.Add(prs);
+                //    Items.Add(item);
                 //}
             }
             catch (Exception ex)

@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-using AppPersons.Models;
-using AppPersons.Views;
+﻿using AppPersons.Models;
 using AppPersons.ViewModels;
+using System;
+using System.ComponentModel;
+using Xamarin.Forms;
 
 namespace AppPersons.Views
 {
