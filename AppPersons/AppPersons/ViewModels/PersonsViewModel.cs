@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
-namespace AppPersons.ViewModels
+namespace AppPersons.ViewModels   
 {
     public  class PersonsViewModel:BaseViewModel
     {
